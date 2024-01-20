@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <!-- ====css=== -->
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffffff;
+           
+
+        }
+
+        #container {
+            text-align: center;
+            position: relative;
+            max-width: 600px;
+            width: 600px;
+            margin: 10px;
+            margin: auto;
+            padding: 40px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            box-shadow: 20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            font-weight: 700;
+            padding: 3px;
+            border-bottom: 2px solid black;
+        }
+
+        #quote {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 18px;
+            border: none;
+            background: #dad8d8;
+            box-shadow: inset 10px 10px 30px #b9b8b8,
+                inset -10px -10px 30px #fbf8f8;
+        }
+        P{
+            text-align: center;
+            margin-top: 30px;
+        }
+        @media (max-width:600px) {
+            #container {
+                max-width: 350px;
+
+            }
+
+            body {
+                height: 70vh;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+    <!-- ====Css=== -->
+</head>
+
+<body>
+
+    <div id="container">
+        <h2>Random Quote Generator</h2>
+        <div id="quote"></div>
+        <button onclick="Quote()" class="btn">Get New Quote</button>
+        <p>&copy; 2024 - UDIT KUMAR</p>
+    </div>
+    <!-- ====JavaScript=== -->
+    <script>
+        const quotes = [
+            // ---use json file also---
+            "The greatest glory in living lies not in never falling, but in rising every time we fall. -Nelson Mandela",
+            "The way to get started is to quit talking and begin doing. - Walt Disney",
+            "Your time is limited, so don't waste it living someone else's life.Don't be trapped by dogma – which is living with the results of other people's thinking. - Steve Jobs",
+            "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+            "If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough. -Oprah Winfrey",
+            "If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success. - James Cameron",
+            "You may say I'm a dreamer, but I'm not the only one.I hope someday you'll join us. And the world will live as one. -John Lennon",
+            "You must be the change you wish to see in the world. -Mahatma Gandhi",
+            "Spread love everywhere you go. Let no one ever come to you without leaving happier. -Mother Teresa",
+            "The only thing we have to fear is fear itself. -Franklin D. Roosevelt",
+            "Darkness cannot drive out darkness: only light can do that. Hate cannot drive out hate: only love can do that. -Martin Luther King Jr.",
+            "Do one thing every day that scares you. -Eleanor Roosevelt",
+            "Well done is better than well said. -Benjamin Franklin",
+            "The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart. -Helen Keller",
+            "It is during our darkest moments that we must focus to see the light. -Aristotle",
+            "Do not go where the path may lead, go instead where there is no path and leave a trail. -Ralph Waldo Emerson",
+            "Be yourself; everyone else is already taken. -Oscar Wilde",
+        ];
+
+        function Quote() {
+            const ele = document.getElementById('quote');
+            const ind = Math.floor(Math.random() * quotes.length);
+            const randomQuote = quotes[ind];
+            ele.textContent = randomQuote;
+        }
+        Quote();
+    </script>
+    <!-- ====JavaScript=== -->
+
+</body>
+
+</html>
